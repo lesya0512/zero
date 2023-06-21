@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Kurale&family=Montserrat:wght@300;400;900&family=Open+Sans:ital,wght@0,300;1,300&display=swap');
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container{
+width: 1100px;
+max-width: 95%;
+margin: 0 auto;
+}
+header{
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+}
+header .logo{
+    width: 170px;
+    height: 80px;
+    background-image: url("../img/logo.svg");
+    background-size: cover;
+}
+header nav ul{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+header nav ul li a{
+    color: black;
+    text-decoration: none;
+}
+
+header nav ul li a:after{
+    width: 0%;
+    height: 2px;
+    background-color: black;
+    margin-top: 6px;
+    transition: .3s;
+
+    /* Обязательно*/
+    display: block;
+    content: '';
+}
+
+header nav ul li a:hover:after{
+    width: 100%;
+}
+
+.text h1{
+    font-weight: 900;
+    font-size: 53px;
+}
+.text p{
+    font-weight: 300;
+    font-size: 25px;
+    margin-bottom: 100px;
+}
+a.btn{
+    border: 5px solid black;
+    font-weight: 900;
+    font-size: 28px;
+    text-decoration: none;
+    color: black;
+    padding: 24px 111px;
+    transition: .3s;
+}
+
+a.btn:hover{
+    color: white;
+    background-color: black;
+}
+
+.text{
+    margin-top: 240px;
+    position: relative;
+    z-index: 1;
+}
+.text h1, text p{
+    pointer-events: none;
+}
+.spline{
+    position: absolute;
+    left: 0px;
+    top: 90px;
+    height: calc(100vh - 90px);
+    width: 100%;
+    overflow: hidden;
+    
+}
+.spline spline-viewer{
+    height: 100vh;
+}
+
+@keyframes onshowText{
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+.text h1{
+    animation: onshowText 1s ease-out;
+}
+.text p{
+    animation: onshowText 1.2s ease-out;
+}
